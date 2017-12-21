@@ -179,10 +179,10 @@
 			var check = '&#10003;';
 			loga('Registering.. ');
 
-			$.getScript('https://ephemeron:dayeiph0ne@pp@api.audioaddict.com/v1/di/members.jsonp?member[email]='+email+'&member[password]='+password+'&member[password_confirmation]='+password+'&_method=POST&callback=_reg', function() {
+			$.getScript('https://api.audioaddict.com/v1/di/members.jsonp?member[email]='+email+'&member[password]='+password+'&member[password_confirmation]='+password+'&_method=POST&callback=_reg', function() {
 				if(state.reg && state.reg.api_key) {
 					loga(check+'\nActivating premium... ');
-					$.getScript('https://ephemeron:dayeiph0ne@pp@api.audioaddict.com/v1/di/members/1/subscriptions/trial/premium-radio-2016.jsonp?api_key='+state.reg.api_key+'&_method=POST&callback=_act', function() {
+					$.getScript('https://api.audioaddict.com/v1/di/members/1/subscriptions/trial/premium-radio-2016.jsonp?api_key='+state.reg.api_key+'&_method=POST&callback=_act', function() {
 						if(!state.act) {
 							var curl = 'http://www.di.fm/member/confirm/'+state.reg.confirmation_token;
 							log(check+'\n');
